@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Lab9.AddAnimalPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab9"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <RelativePanel>
+            <StackPanel x:Name="Student" Margin="35,10">
+                <TextBox Text="{x:Bind ViewModel.NewName, Mode=TwoWay}" x:Name="Kind" Header= "Ім'я" Margin="0,14,0,0" HorizontalAlignment="Center"  TextAlignment="Center" Width="100"/>
+                <TextBox Text="{x:Bind ViewModel.NewDescription, Mode=TwoWay}" x:Name="Umovi" Header="Опис тварини"  Margin="0,14,0,0" HorizontalAlignment="Center" TextAlignment="Center" Width="200"/>
+                <TextBox Text="{x:Bind ViewModel.NewType, Mode=TwoWay}" x:Name="Period" Header="Тип" Margin="0,14,0,0"  HorizontalAlignment="Center" TextAlignment="Center" Width="100"/>
+                <TextBox Text="{x:Bind ViewModel.NewBiome, Mode=TwoWay}" x:Name="Water" Header="Місце проживання" Margin="0,14,0,0"  HorizontalAlignment="Center" TextAlignment="Center" Width="100"/>
+            </StackPanel>
+            <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Student">
+                <Button Content="Додати" Margin="14" Click="Button_Click" />
+                <Button Content="Очистити" Margin="4" Click="Button_Click_1" />
+            </StackPanel>
+        </RelativePanel>
+
+    </Grid>
+</Page>

@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Lab9.AnimalsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab9"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:database="using:Lab9.DB"
+    mc:Ignorable="d"
+ 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView x:Name="listView" ItemsSource="{x:Bind ViewModel.Animals, Mode=OneWay}" HorizontalAlignment="Center">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal"  >
+                        <TextBlock Text="ID" Margin="8,0" Width="50" TextAlignment="Center" />
+                        <TextBlock Text="Ім'я" Width="100" TextAlignment="Center"  />
+                        <TextBlock Text="Опис тварини" Width="200" TextAlignment="Center"  />
+                        <TextBlock Text="Тип тварини" Width="200" TextAlignment="Center"  />
+                        <TextBlock Text="Місце проживання" Width="200" TextAlignment="Center"   />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="database:Animal">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock 
+                         Text="{x:Bind Id}"
+                         Width="50" TextAlignment="Center"/>
+                        <TextBlock 
+                         Text="{x:Bind Name}"
+                         Width="100" TextAlignment="Center" />
+                        <TextBlock Text="{x:Bind Description}"
+                        Width="200" TextAlignment="Center" />
+                        <TextBlock Text="{x:Bind Type}"
+                        Width="200" TextAlignment="Center" />
+                        <TextBlock Text="{x:Bind Biome}"
+                        Width="200" TextAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
